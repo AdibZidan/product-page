@@ -1,8 +1,11 @@
 import './App.scss';
+import Header from './components/header/Header';
 
-function App() {
+function App(): JSX.Element {
   return (
-    <></>
+    <>
+      <Header />
+    </>
   );
 }
 
