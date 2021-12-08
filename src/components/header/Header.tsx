@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Overlay from '../overlay/Overlay';
+import OverlayOrNull from '../overlay-or-null/OverlayOrNull';
 import './Header.scss';
 
-function Header(): JSX.Element {
+export default function Header(): JSX.Element {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
@@ -62,9 +62,7 @@ function Header(): JSX.Element {
         </nav>
       </header>
 
-      <Overlay isClicked={isClicked} />
+      <OverlayOrNull isClicked={isClicked} />
     </>
   );
 }
-
-export default Header;

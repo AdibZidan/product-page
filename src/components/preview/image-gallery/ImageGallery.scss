@@ -1,0 +1,33 @@
+article {
+  margin: 0 10px;
+
+  img {
+    &.selected-image {
+      align-self: center;
+      width: 400px;
+      border-radius: 20px;
+    }
+  }
+
+  div {
+    &.thumbnails {
+      display: flex;
+      justify-content: space-evenly;
+
+      img {
+        margin: 12px 0;
+        height: 90px;
+        border-radius: 10px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.selected {
+          opacity: 0.6;
+          border: 2px solid hsl(26, 100%, 55%);
+        }
+      }
+    }
+  }
+}
