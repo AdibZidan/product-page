@@ -1,13 +1,19 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from '../../store/interfaces/app/app-state.interface';
+import { showHideCartView } from '../../store/reducers/cart/cart.reducer';
 import OverlayOrNull from '../overlay-or-null/OverlayOrNull';
+import Cart from './cart/Cart';
 import './Header.scss';
 
 export default function Header(): JSX.Element {
   const [isClicked, setIsClicked] = useState(false);
+  const cart = useSelector((state: AppState) => state.cart);
+  const dispatch = useDispatch();
 
   return (
     <>
-      <header>
+      <header className='header'>
         <nav>
           <ul>
             <li
@@ -43,11 +49,20 @@ export default function Header(): JSX.Element {
 
             <div className='items-2'>
               <li>
+                {
+                  cart.totalItems > 0 ?
+                    <span className='total-items'>{cart.totalItems}</span> :
+                    null
+                }
+
                 <img
+                  onClick={() => dispatch(showHideCartView())}
                   className='cart'
                   src='images/icons/icon-cart.svg'
                   alt='Cart'
                 />
+
+                {cart.isShown ? <Cart /> : null}
               </li>
 
               <li>

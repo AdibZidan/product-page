@@ -1,29 +1,32 @@
-import { useState } from 'react';
-import { getImageWithoutThumbnail, getUpdatedImageWithThumbnails, imagesWithThumbnail } from './image-gallery.helper';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from '../../../store/interfaces/app/app-state.interface';
+import { Image } from '../../../store/interfaces/image-gallery/image/image.interface';
+import { getThumbnails, selectImage } from '../../../store/reducers/image-gallery/image-gallery.reducer';
 import './ImageGallery.scss';
-import { Thumbnail } from './thumbnail.interface';
 
 export default function ImageGallery(): JSX.Element {
-  const [imageWithThumbnails, setImageWithThumbnails] = useState(imagesWithThumbnail);
-  const [selectedImage, setSelectedImage] = useState(getImageWithoutThumbnail(imageWithThumbnails[0].path));
+  const imageGallery = useSelector((state: AppState) => state.imageGallery);
+  const dispatch = useDispatch();
+
+  console.log(imageGallery);
 
   return (
     <article>
       <img
         className='selected-image'
-        src={selectedImage}
+        src={imageGallery.selectedImage.path}
         alt='Product'
       />
 
       <div className='thumbnails'>
-        {imageWithThumbnails.map((thumbnail: Thumbnail, index: number): JSX.Element =>
+        {imageGallery.images.map((image: Image, index: number): JSX.Element =>
           <img
-            className={thumbnail.isSelected ? 'selected' : ''}
-            onClick={(): void => {
-              setSelectedImage(getImageWithoutThumbnail(thumbnail.path));
-              setImageWithThumbnails(getUpdatedImageWithThumbnails(imageWithThumbnails, thumbnail));
+            className={image.isSelected ? 'selected' : ''}
+            onClick={() => {
+              dispatch(selectImage(image));
+              dispatch(getThumbnails(image));
             }}
-            src={thumbnail.path}
+            src={image.path}
             alt={`Product ${index}`}
             key={index}
           />

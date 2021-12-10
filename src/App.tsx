@@ -2,7 +2,7 @@ import './App.scss';
 import Header from './components/header/Header';
 import Preview from './components/preview/Preview';
 
-function App(): JSX.Element {
+export default function App(): JSX.Element {
   return (
     <>
       <Header />
@@ -10,5 +10,3 @@ function App(): JSX.Element {
     </>
   );
 }
-
-export default App;

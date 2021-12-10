@@ -4,7 +4,7 @@ import './Preview.scss';
 
 const Preview = (): JSX.Element => {
   return (
-    <section>
+    <section className='preview'>
       <ImageGallery />
       <ImageDescription />
     </section>

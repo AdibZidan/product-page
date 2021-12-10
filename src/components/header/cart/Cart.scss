@@ -1,0 +1,79 @@
+@import "../../../../public/assets/mixins/_button.mixin.scss";
+
+section {
+  &.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    right: -65px;
+    height: 200px;
+    width: 275px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    background-color: #fff;
+
+    header {
+      width: 100%;
+
+      h3 {
+        padding: 0 0 10px 6px;
+        height: 30px;
+        border-bottom: 1px solid #000;
+        color: #000;
+        font-size: 0.9rem;
+      }
+    }
+
+    div {
+      &.cart-container {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+
+        div {
+          &.sneaker-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 10px;
+
+            h6 {
+              display: flex;
+              flex-direction: column;
+              flex-basis: 100%;
+
+              span {
+                &.total-amount {
+                  font-weight: bold;
+                  color: #000;
+                  margin-left: 10px;
+                }
+              }
+            }
+
+            img {
+              &.thumbnail {
+                order: -1;
+                width: 50px;
+                border-radius: 10px;
+              }
+
+              &.delete-icon {
+                width: 12px;
+              }
+            }
+          }
+        }
+
+        img {
+          width: 75px;
+        }
+      }
+    }
+
+    @include button;
+  }
+}

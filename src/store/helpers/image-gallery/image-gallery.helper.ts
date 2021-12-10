@@ -1,6 +1,6 @@
-import { Thumbnail } from './thumbnail.interface';
+import { Image } from '../../interfaces/image-gallery/image/image.interface';
 
-export const imagesWithThumbnail: Thumbnail[] = [
+export const images: Image[] = [
   {
     path: 'images/sneakers/image-product-1-thumbnail.jpg',
     isSelected: true
@@ -19,16 +19,18 @@ export const imagesWithThumbnail: Thumbnail[] = [
   }
 ];
 
-export const getImageWithoutThumbnail = (image: string): string | (() => string) => {
-  return image.replace('-thumbnail', '');
-};
+export const selectImageWithoutThumbnail = (image: Image): Image => ({
+  ...image,
+  path: image.path.replace('-thumbnail', ''),
+  isSelected: true
+});
 
 export const getUpdatedImageWithThumbnails = (
-  imageWithThumbnails: Thumbnail[],
-  original: Thumbnail
-): Thumbnail[] =>
-  imageWithThumbnails.map((thumbnail: Thumbnail): Thumbnail =>
-    thumbnail === original ?
-      ({ ...original, isSelected: true }) :
+  images: Image[],
+  originalPath: string
+): Image[] =>
+  images.map((thumbnail: Image): Image =>
+    thumbnail.path === originalPath ?
+      ({ ...thumbnail, isSelected: true }) :
       ({ ...thumbnail, isSelected: false })
   );

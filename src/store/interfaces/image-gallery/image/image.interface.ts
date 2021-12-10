@@ -1,4 +1,4 @@
-export interface Thumbnail {
+export interface Image {
   path: string;
   isSelected: boolean;
 }

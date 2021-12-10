@@ -1,0 +1,30 @@
+@mixin button {
+  button {
+    &.button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      padding: 10px;
+      background-color: #ff7d1a;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: #ff7d1a 0px 16px 35px -10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
