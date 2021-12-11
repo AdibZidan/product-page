@@ -1,14 +1,13 @@
+import { AppState } from '@store/interfaces/app/app-state.interface';
+import { ImageGallery as ImageGalleryInterface } from '@store/interfaces/image-gallery/image-gallery.interface';
+import { Image } from '@store/interfaces/image-gallery/image/image.interface';
+import { getThumbnails, selectImage } from '@store/reducers/image-gallery/image-gallery.reducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../../store/interfaces/app/app-state.interface';
-import { Image } from '../../../store/interfaces/image-gallery/image/image.interface';
-import { getThumbnails, selectImage } from '../../../store/reducers/image-gallery/image-gallery.reducer';
 import './ImageGallery.scss';
 
 export default function ImageGallery(): JSX.Element {
-  const imageGallery = useSelector((state: AppState) => state.imageGallery);
+  const imageGallery: ImageGalleryInterface = useSelector((state: AppState): ImageGalleryInterface => state.imageGallery);
   const dispatch = useDispatch();
-
-  console.log(imageGallery);
 
   return (
     <article>

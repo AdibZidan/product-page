@@ -1,7 +1,7 @@
+import { AppState } from '@store/interfaces/app/app-state.interface';
+import { showHideCartView } from '@store/reducers/cart/cart.reducer';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../store/interfaces/app/app-state.interface';
-import { showHideCartView } from '../../store/reducers/cart/cart.reducer';
 import OverlayOrNull from '../overlay-or-null/OverlayOrNull';
 import Cart from './cart/Cart';
 import './Header.scss';

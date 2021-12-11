@@ -1,8 +1,8 @@
+import { AppState } from '@store/interfaces/app/app-state.interface';
+import { Cart as CartInterface } from '@store/interfaces/cart/cart.interface';
+import { ImageGallery } from '@store/interfaces/image-gallery/image-gallery.interface';
+import { resetCart } from '@store/reducers/cart/cart.reducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../../store/interfaces/app/app-state.interface';
-import { Cart as CartInterface } from '../../../store/interfaces/cart/cart.interface';
-import { ImageGallery } from '../../../store/interfaces/image-gallery/image-gallery.interface';
-import { resetCart } from '../../../store/reducers/cart/cart.reducer';
 import './Cart.scss';
 
 export default function Cart(): JSX.Element {

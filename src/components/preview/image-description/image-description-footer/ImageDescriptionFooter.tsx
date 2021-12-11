@@ -1,6 +1,6 @@
+import { AppState } from '@store/interfaces/app/app-state.interface';
+import { addToCart, decrementCartCount, incrementCartCount } from '@store/reducers/cart/cart.reducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../../../store/interfaces/app/app-state.interface';
-import { addToCart, decrementCartCount, incrementCartCount } from '../../../../store/reducers/cart/cart.reducer';
 import './ImageDescriptionFooter.scss';
 
 export default function ImageDescriptionFooter(): JSX.Element {

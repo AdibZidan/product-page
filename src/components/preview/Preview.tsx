@@ -2,7 +2,7 @@ import { ImageDescription } from './image-description/ImageDescription';
 import ImageGallery from './image-gallery/ImageGallery';
 import './Preview.scss';
 
-const Preview = (): JSX.Element => {
+export default function Preview(): JSX.Element {
   return (
     <section className='preview'>
       <ImageGallery />
@@ -10,5 +10,3 @@ const Preview = (): JSX.Element => {
     </section>
   );
 };
-
-export default Preview;
