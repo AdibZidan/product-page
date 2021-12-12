@@ -28,11 +28,11 @@ export const ImageDescription = (): JSX.Element => {
         <span className='discount'>
           50%
         </span>
-      </div>
 
-      <span className='old-price'>
-        $250.00
-      </span>
+        <span className='old-price'>
+          $250.00
+        </span>
+      </div>
 
       <ImageDescriptionFooter />
     </article>

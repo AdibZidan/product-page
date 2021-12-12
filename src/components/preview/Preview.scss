@@ -6,3 +6,40 @@ section {
     height: 80vh;
   }
 }
+
+@media (min-width: 100px) and (max-width: 920px) {
+  section {
+    &.preview {
+      display: block;
+
+      article {
+        margin: 0;
+        width: 100%;
+
+        &.description {
+          header,
+          p,
+          div.price-container,
+          span.old-price {
+            width: 100%;
+            margin: 12px 0;
+            padding: 0 10px;
+          }
+        }
+
+        img {
+          &.selected-image {
+            width: 100%;
+            border-radius: 0;
+          }
+        }
+
+        div {
+          &.thumbnails {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

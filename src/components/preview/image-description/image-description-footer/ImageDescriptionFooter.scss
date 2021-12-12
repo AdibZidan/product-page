@@ -39,3 +39,21 @@ footer {
     @include button;
   }
 }
+
+@media (min-width: 100px) and (max-width: 920px) {
+  footer {
+    &.image-description-footer {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      height: auto;
+
+      div.quantity-container,
+      button.button {
+        width: 100%;
+        height: 60px;
+        margin: 12px 0;
+      }
+    }
+  }
+}

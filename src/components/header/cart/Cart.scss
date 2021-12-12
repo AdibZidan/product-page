@@ -77,3 +77,29 @@ section {
     @include button;
   }
 }
+
+@media (min-width: 100px) and (max-width: 920px) {
+  section {
+    &.cart {
+      z-index: 2;
+      width: 98vw;
+      top: 90px;
+      right: -72px;
+      border-radius: 10px;
+
+      div {
+        &.cart-container {
+          margin: 40px 0;
+        }
+      }
+    }
+
+    &.with-added-items {
+      height: 280px;
+
+      h6 {
+        font-size: 1rem;
+      }
+    }
+  }
+}

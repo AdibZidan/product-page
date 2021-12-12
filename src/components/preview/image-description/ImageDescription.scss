@@ -46,16 +46,26 @@ article {
             font-size: 1rem;
             font-weight: bold;
           }
+
+          &.old-price {
+            margin-left: 10px;
+            text-decoration: line-through;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #888b91;
+          }
         }
       }
     }
+  }
+}
 
-    span {
-      &.old-price {
-        text-decoration: line-through;
-        font-size: 1.1rem;
-        font-weight: bold;
-        color: #888b91;
+@media (min-width: 100px) and (max-width: 920px) {
+  article {
+    &.description {
+      div {
+        display: flex;
+        align-items: center;
       }
     }
   }

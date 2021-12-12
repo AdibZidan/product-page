@@ -11,7 +11,7 @@ export default function Cart(): JSX.Element {
   const dispatch = useDispatch();
 
   return (
-    <section className='cart'>
+    <section className={(cart.totalItems > 0 && cart.isCartAdded) ? 'cart with-added-items' : 'cart'}>
       <header>
         <h3>
           Cart

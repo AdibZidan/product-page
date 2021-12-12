@@ -4,6 +4,7 @@ import { Image } from '@store/interfaces/image-gallery/image/image.interface';
 import { getThumbnails, selectImage } from '@store/reducers/image-gallery/image-gallery.reducer';
 import { useDispatch, useSelector } from 'react-redux';
 import './ImageGallery.scss';
+import MobileButtons from './mobile-buttons/MobileButtons';
 
 export default function ImageGallery(): JSX.Element {
   const imageGallery: ImageGalleryInterface = useSelector((state: AppState): ImageGalleryInterface => state.imageGallery);
@@ -16,6 +17,8 @@ export default function ImageGallery(): JSX.Element {
         src={imageGallery.selectedImage.path}
         alt='Product'
       />
+
+      <MobileButtons dispatch={dispatch} />
 
       <div className='thumbnails'>
         {imageGallery.images.map((image: Image, index: number): JSX.Element =>
