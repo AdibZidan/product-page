@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import { Cart } from '../../interfaces/cart/cart.interface';
 
 const initialCartState: Cart = {
   totalItems: 0,
   totalAmount: 0,
   isShown: false,
-  isCartAdded: false
+  isCartAdded: false,
 };
 
 export const cartSlice = createSlice({
@@ -18,31 +18,32 @@ export const cartSlice = createSlice({
       return {
         ...state,
         totalItems,
-        totalAmount: 125 * totalItems
+        totalAmount: 125 * totalItems,
       };
     },
     decrementCartCount: (state: Cart): Cart => {
-      const totalItems: number = state.totalItems > 0 ? state.totalItems - 1 : state.totalItems;
+      const totalItems: number =
+        state.totalItems > 0 ? state.totalItems - 1 : state.totalItems;
 
       return {
         ...state,
         totalItems,
-        totalAmount: 125 * totalItems
+        totalAmount: 125 * totalItems,
       };
     },
     addToCart: (state: Cart): Cart => ({
       ...state,
-      isCartAdded: true
+      isCartAdded: true,
     }),
     showHideCartView: (state: Cart): Cart => ({
       ...state,
-      isShown: !state.isShown
+      isShown: !state.isShown,
     }),
     resetCart: (): Cart => ({
       ...initialCartState,
-      isShown: true
-    })
-  }
+      isShown: true,
+    }),
+  },
 });
 
 export const {
@@ -50,7 +51,7 @@ export const {
   decrementCartCount,
   addToCart,
   showHideCartView,
-  resetCart
+  resetCart,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

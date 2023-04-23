@@ -4,9 +4,9 @@ import './Preview.scss';
 
 export default function Preview(): JSX.Element {
   return (
-    <section className='preview'>
+    <section className="preview">
       <ImageGallery />
       <ImageDescription />
     </section>
   );
-};
+}

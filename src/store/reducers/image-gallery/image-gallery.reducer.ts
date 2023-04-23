@@ -1,10 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getUpdatedImageWithThumbnails, images, selectImageWithoutThumbnail } from '../../helpers/image-gallery/image-gallery.helper';
+import { createSlice } from '@reduxjs/toolkit';
+import {
+  getUpdatedImageWithThumbnails,
+  images,
+  selectImageWithoutThumbnail,
+} from '../../helpers/image-gallery/image-gallery.helper';
 import { ImageGallery } from '../../interfaces/image-gallery/image-gallery.interface';
 
 const initialImageGalleryState: ImageGallery = {
   images: images,
-  selectedImage: selectImageWithoutThumbnail(images[0])
+  selectedImage: selectImageWithoutThumbnail(images[0]),
 };
 
 export const imageGallerySlice = createSlice({
@@ -13,18 +17,15 @@ export const imageGallerySlice = createSlice({
   reducers: {
     getThumbnails: (state, { payload }) => ({
       ...state,
-      images: getUpdatedImageWithThumbnails(state.images, payload.path)
+      images: getUpdatedImageWithThumbnails(state.images, payload.path),
     }),
     selectImage: (state, { payload }) => ({
       ...state,
-      selectedImage: selectImageWithoutThumbnail(payload)
-    })
-  }
+      selectedImage: selectImageWithoutThumbnail(payload),
+    }),
+  },
 });
 
-export const {
-  getThumbnails,
-  selectImage
-} = imageGallerySlice.actions;
+export const { getThumbnails, selectImage } = imageGallerySlice.actions;
 
 export default imageGallerySlice.reducer;
