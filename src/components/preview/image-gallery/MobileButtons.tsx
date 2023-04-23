@@ -1,15 +1,17 @@
-import { useState } from 'react';
-import { selectImage } from '../../../../store/reducers/image-gallery/image-gallery.reducer';
+import { FC, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { selectImage } from '../../../store/reducers/image-gallery/image-gallery.reducer';
 import './MobileButtons.scss';
 
-export default function MobileButtons({ dispatch }: any): JSX.Element {
-  let [index, setIndex] = useState(1);
+export const MobileButtons: FC = () => {
+  const dispatch = useDispatch();
+  const [index, setIndex] = useState(1);
 
   return (
     <div className="mobile-buttons">
       <img
         onClick={() => {
-          setIndex(index !== 1 ? --index : index);
+          setIndex(prevState => (prevState !== 1 ? -prevState : prevState));
           dispatch(
             selectImage({
               path: `images/sneakers/image-product-${index}-thumbnail.jpg`,
@@ -23,7 +25,7 @@ export default function MobileButtons({ dispatch }: any): JSX.Element {
 
       <img
         onClick={() => {
-          setIndex(index < 4 ? ++index : index);
+          setIndex(prevState => (prevState < 4 ? ++prevState : prevState));
           dispatch(
             selectImage({
               path: `images/sneakers/image-product-${index}-thumbnail.jpg`,
@@ -36,4 +38,4 @@ export default function MobileButtons({ dispatch }: any): JSX.Element {
       />
     </div>
   );
-}
+};

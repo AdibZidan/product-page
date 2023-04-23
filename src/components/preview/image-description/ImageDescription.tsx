@@ -1,7 +1,8 @@
-import ImageDescriptionFooter from './image-description-footer/ImageDescriptionFooter';
+import { FC } from 'react';
 import './ImageDescription.scss';
+import { ImageDescriptionFooter } from './ImageDescriptionFooter';
 
-export const ImageDescription = (): JSX.Element => {
+export const ImageDescription: FC = () => {
   return (
     <article className="description">
       <header>

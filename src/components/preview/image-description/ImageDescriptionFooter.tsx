@@ -1,13 +1,14 @@
+import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../../../store/interfaces/app/app-state.interface';
+import { AppState } from '../../../store/interfaces/app/app-state.interface';
 import {
   addToCart,
   decrementCartCount,
   incrementCartCount,
-} from '../../../../store/reducers/cart/cart.reducer';
+} from '../../../store/reducers/cart/cart.reducer';
 import './ImageDescriptionFooter.scss';
 
-export default function ImageDescriptionFooter(): JSX.Element {
+export const ImageDescriptionFooter: FC = () => {
   const cart = useSelector((state: AppState) => state.cart);
   const dispatch = useDispatch();
 
@@ -32,4 +33,4 @@ export default function ImageDescriptionFooter(): JSX.Element {
       </button>
     </footer>
   );
-}
+};

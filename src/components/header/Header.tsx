@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../../store/interfaces/app/app-state.interface';
 import { showHideCartView } from '../../store/reducers/cart/cart.reducer';
-import OverlayOrNull from '../overlay-or-null/OverlayOrNull';
-import Cart from './cart/Cart';
+import { Overlay } from '../overlay';
+import { Cart } from './cart';
 import './Header.scss';
 
-export default function Header(): JSX.Element {
-  const [isClicked, setIsClicked] = useState(false);
+export const Header: FC = () => {
+  const [isOverlayShown, setIsOverlayShown] = useState(false);
   const cart = useSelector((state: AppState) => state.cart);
   const dispatch = useDispatch();
 
@@ -17,7 +17,7 @@ export default function Header(): JSX.Element {
         <nav>
           <ul>
             <li
-              onClick={(): void => setIsClicked(!isClicked)}
+              onClick={(): void => setIsOverlayShown(!isOverlayShown)}
               className="hamburger"
             >
               <img src="images/icons/icon-menu.svg" alt="Menu Icon" />
@@ -27,10 +27,10 @@ export default function Header(): JSX.Element {
               <img src="images/logos/logo.svg" alt="Sneakers" />
             </li>
 
-            <div className={isClicked ? 'opened items' : 'items'}>
+            <div className={isOverlayShown ? 'opened items' : 'items'}>
               <img
                 className="close-icon"
-                onClick={(): void => setIsClicked(!isClicked)}
+                onClick={(): void => setIsOverlayShown(!isOverlayShown)}
                 src="images/icons/icon-close.svg"
                 alt="Close Icon"
               />
@@ -70,7 +70,7 @@ export default function Header(): JSX.Element {
         </nav>
       </header>
 
-      <OverlayOrNull isClicked={isClicked} />
+      <Overlay isShown={isOverlayShown} />
     </>
   );
-}
+};

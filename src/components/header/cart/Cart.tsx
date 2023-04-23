@@ -1,9 +1,10 @@
+import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../../../store/interfaces/app/app-state.interface';
 import { resetCart } from '../../../store/reducers/cart/cart.reducer';
 import './Cart.scss';
 
-export default function Cart(): JSX.Element {
+export const Cart: FC = () => {
   const cart = useSelector((state: AppState) => state.cart);
   const imageGallery = useSelector((state: AppState) => state.imageGallery);
   const dispatch = useDispatch();
@@ -54,4 +55,4 @@ export default function Cart(): JSX.Element {
       ) : null}
     </section>
   );
-}
+};

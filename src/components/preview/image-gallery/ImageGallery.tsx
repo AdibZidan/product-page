@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../../../store/interfaces/app/app-state.interface';
 import {
@@ -5,9 +6,9 @@ import {
   selectImage,
 } from '../../../store/reducers/image-gallery/image-gallery.reducer';
 import './ImageGallery.scss';
-import MobileButtons from './mobile-buttons/MobileButtons';
+import { MobileButtons } from './MobileButtons';
 
-export default function ImageGallery(): JSX.Element {
+export const ImageGallery: FC = () => {
   const imageGallery = useSelector((state: AppState) => state.imageGallery);
   const dispatch = useDispatch();
 
@@ -19,7 +20,7 @@ export default function ImageGallery(): JSX.Element {
         alt="Product"
       />
 
-      <MobileButtons dispatch={dispatch} />
+      <MobileButtons />
 
       <div className="thumbnails">
         {imageGallery.images.map(
@@ -39,4 +40,4 @@ export default function ImageGallery(): JSX.Element {
       </div>
     </article>
   );
-}
+};

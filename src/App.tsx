@@ -1,11 +1,9 @@
-import Header from './components/header/Header';
-import Preview from './components/preview/Preview';
+import { FC } from 'react';
+import { Header, Preview } from './components';
 
-export default function App(): JSX.Element {
-  return (
-    <>
-      <Header />
-      <Preview />
-    </>
-  );
-}
+export const App: FC = () => (
+  <>
+    <Header />
+    <Preview />
+  </>
+);
