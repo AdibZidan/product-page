@@ -1,18 +1,10 @@
 div {
   &.mobile-buttons {
-    display: none;
-  }
-}
-
-@media (min-width: 100px) and (max-width: 920px) {
-  div {
-    &.mobile-buttons {
-      position: absolute;
-      top: 40%;
-      left: 5px;
-      width: 96%;
-      display: flex;
-      justify-content: space-between;
-    }
+    position: absolute;
+    top: 40%;
+    left: 5px;
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
   }
 }

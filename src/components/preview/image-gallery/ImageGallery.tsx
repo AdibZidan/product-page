@@ -1,9 +1,10 @@
-import { useProductImage } from '@hooks';
+import { useMediaQuery, useProductImage } from '@hooks';
 import { FC } from 'react';
 import './ImageGallery.scss';
 import { MobileButtons } from './MobileButtons';
 
 export const ImageGallery: FC = () => {
+  const { isMatching } = useMediaQuery('(max-width: 920px)');
   const { images, selectedProduct, selectImage } = useProductImage();
 
   const handleThumbnailChange =
@@ -18,7 +19,7 @@ export const ImageGallery: FC = () => {
         src={selectedProduct.picture}
         alt="Product"
       />
-      <MobileButtons />
+      {isMatching && <MobileButtons />}
       <div className="thumbnails">
         {images.map(image => (
           <img
