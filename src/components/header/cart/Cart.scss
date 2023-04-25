@@ -1,4 +1,4 @@
-@import "../../../../public/assets/mixins/_button.mixin.scss";
+@import "public/assets/mixins/_button.mixin.scss";
 
 section {
   &.cart {
@@ -11,7 +11,7 @@ section {
     right: -65px;
     height: 200px;
     width: 275px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    box-shadow: rgb(0 0 0 / 10%) 0 4px 12px;
     background-color: #fff;
 
     header {
@@ -63,6 +63,10 @@ section {
 
               &.delete-icon {
                 width: 12px;
+
+                &:hover {
+                  cursor: pointer;
+                }
               }
             }
           }

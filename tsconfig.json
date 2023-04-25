@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@context": ["./src/shared/context/index"],
+      "@hooks": ["./src/shared/hooks/index"]
+    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

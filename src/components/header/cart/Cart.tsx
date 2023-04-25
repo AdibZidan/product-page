@@ -1,58 +1,45 @@
+import { useCart, useProductImage } from '@hooks';
 import { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../../store/interfaces/app/app-state.interface';
-import { resetCart } from '../../../store/reducers/cart/cart.reducer';
 import './Cart.scss';
 
 export const Cart: FC = () => {
-  const cart = useSelector((state: AppState) => state.cart);
-  const imageGallery = useSelector((state: AppState) => state.imageGallery);
-  const dispatch = useDispatch();
+  const { totalItems, totalAmount, isCartAdded, resetCart } = useCart();
+  const { selectedProduct } = useProductImage();
+
+  const isInformationShown = totalItems > 0 && isCartAdded;
+  const className = isInformationShown ? 'cart with-added-items' : 'cart';
 
   return (
-    <section
-      className={
-        cart.totalItems > 0 && cart.isCartAdded
-          ? 'cart with-added-items'
-          : 'cart'
-      }
-    >
+    <section className={className}>
       <header>
         <h3>Cart</h3>
       </header>
-
       <div className="cart-container">
-        {cart.totalItems > 0 && cart.isCartAdded ? (
+        {isInformationShown && (
           <div className="sneaker-container">
             <h6>
               Fall Limited Edition Sneakers
               <span>
-                $125.00 x {cart.totalItems}
-                <span className="total-amount">${cart.totalAmount}</span>
+                $125.00 x {totalItems}
+                <span className="total-amount">${totalAmount}</span>
               </span>
             </h6>
-
             <img
               className="thumbnail"
-              src={imageGallery.selectedImage.path}
+              src={selectedProduct.thumbnail}
               alt="Sneaker"
             />
-
             <img
-              onClick={() => dispatch(resetCart())}
+              onClick={resetCart}
               className="delete-icon"
-              src="images/icons/icon-delete.svg"
+              src="/images/icons/icon-delete.svg"
               alt="Delete icon"
             />
           </div>
-        ) : (
-          'Your cart is empty.'
         )}
+        {!isInformationShown && 'Your cart is empty.'}
       </div>
-
-      {cart.totalItems > 0 && cart.isCartAdded ? (
-        <button className="button">Checkout</button>
-      ) : null}
+      {isInformationShown && <button className="button">Checkout</button>}
     </section>
   );
 };

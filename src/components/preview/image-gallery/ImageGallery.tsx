@@ -1,42 +1,34 @@
+import { useProductImage } from '@hooks';
 import { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../../store/interfaces/app/app-state.interface';
-import {
-  getThumbnails,
-  selectImage,
-} from '../../../store/reducers/image-gallery/image-gallery.reducer';
 import './ImageGallery.scss';
 import { MobileButtons } from './MobileButtons';
 
 export const ImageGallery: FC = () => {
-  const imageGallery = useSelector((state: AppState) => state.imageGallery);
-  const dispatch = useDispatch();
+  const { images, selectedProduct, selectImage } = useProductImage();
+
+  const handleThumbnailChange =
+    (image: { thumbnail: string; picture: string; isSelected: boolean }) =>
+    () =>
+      selectImage(image);
 
   return (
     <article>
       <img
         className="selected-image"
-        src={imageGallery.selectedImage.path}
+        src={selectedProduct.picture}
         alt="Product"
       />
-
       <MobileButtons />
-
       <div className="thumbnails">
-        {imageGallery.images.map(
-          (image, index: number): JSX.Element => (
-            <img
-              className={image.isSelected ? 'selected' : ''}
-              onClick={() => {
-                dispatch(selectImage(image));
-                dispatch(getThumbnails(image));
-              }}
-              src={image.path}
-              alt={`Product ${index}`}
-              key={index}
-            />
-          )
-        )}
+        {images.map(image => (
+          <img
+            key={image.thumbnail}
+            className={image.isSelected ? 'selected' : undefined}
+            onClick={handleThumbnailChange(image)}
+            src={image.thumbnail}
+            alt={`Product ${image.thumbnail}`}
+          />
+        ))}
       </div>
     </article>
   );

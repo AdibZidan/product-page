@@ -1,4 +1,4 @@
-@import "../../../../public/assets/mixins/button.mixin";
+@import "public/assets/mixins/button.mixin";
 
 footer {
   &.image-description-footer {
@@ -29,8 +29,12 @@ footer {
           font-weight: bold;
           font-size: 1.8rem;
 
-          &:hover {
+          &:hover:not(:disabled) {
             cursor: pointer;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
           }
         }
       }
