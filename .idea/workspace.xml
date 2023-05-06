@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14fe0fb9-b1a4-443f-bdea-c7166e98889d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/preview/image-gallery/ImageGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/preview/image-gallery/ImageGallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/preview/image-gallery/MobileButtons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/preview/image-gallery/MobileButtons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,43 +65,15 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.prettier">
-    <configuration name="#useProductImage()" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.test:cov">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
       <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/shared/hooks/__tests__/useProductImage.test.tsx" />
-      <test-names>
-        <test-name value="#useProductImage()" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="#useProductImage().returns initial product image value" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/shared/hooks/__tests__/useProductImage.test.tsx" />
-      <test-names>
-        <test-name value="#useProductImage()" />
-        <test-name value="returns initial product image value" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="#useProductImage().selects a different image" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/shared/hooks/__tests__/useProductImage.test.tsx" />
-      <test-names>
-        <test-name value="#useProductImage()" />
-        <test-name value="selects a different image" />
-      </test-names>
       <method v="2" />
     </configuration>
     <configuration name="prettier" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -110,6 +81,26 @@
       <command value="run" />
       <scripts>
         <script value="prettier" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -126,19 +117,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.serve" />
+      <item itemvalue="npm.test" />
       <item itemvalue="npm.prettier" />
       <item itemvalue="npm.test:cov" />
-      <item itemvalue="Vitest.#useProductImage()" />
-      <item itemvalue="Vitest.#useProductImage().returns initial product image value" />
-      <item itemvalue="Vitest.#useProductImage().selects a different image" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.prettier" />
         <item itemvalue="npm.test:cov" />
-        <item itemvalue="Vitest.#useProductImage()" />
-        <item itemvalue="Vitest.#useProductImage().selects a different image" />
-        <item itemvalue="Vitest.#useProductImage().returns initial product image value" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.prettier" />
+        <item itemvalue="npm.serve" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
